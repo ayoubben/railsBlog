@@ -23,6 +23,7 @@ gem 'simple_form'
 gem 'slim-rails'
 gem 'therubyracer', :platform=>:ruby
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
+gem 'acts-as-taggable-on'
 group :development do
   gem 'better_errors'
   gem 'hub', :require=>nil
