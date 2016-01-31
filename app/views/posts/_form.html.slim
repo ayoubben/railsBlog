@@ -1,0 +1,24 @@
+= simple_form_for(@post) do |f|
+  = f.error_notification
+
+  .form-inputs
+    .form-group
+      .col-lg-2.col-sm-2.control-label = f.label :image, "Image de l'article"
+      .col-lg-10
+        = f.file_field :image, class: "form-control"
+    .form-group
+        .col-lg-2.col-sm-2.control-label = f.label :title, "Titre de l'article"
+        .col-lg-10
+          = f.text_field :title, class: "form-control"
+    .form-group
+        .col-lg-2.col-sm-2.control-label = f.label :text, "text de l'article"
+        .col-lg-10
+          = f.text_field :text, class: "form-control"
+
+    .form-group
+        .col-lg-2.col-sm-2.control-label = f.label :tag_list, "Mot clés"
+        .col-lg-10
+          = f.text_field :tag_list, class: "form-control"
+
+  .form-actions
+    = f.button :submit
