@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/galetahub/ckeditor.git
+  revision: 8c95708276dd9e8a9b5760abff18a298b86851f8
+  specs:
+    ckeditor (4.1.6)
+      cocaine
+      orm_adapter (~> 0.5.0)
+
+GIT
   remote: git://github.com/thoughtbot/paperclip.git
   revision: 37589f9b0c869c8df5be1ee4d83e14fb353a7dff
   specs:
@@ -268,6 +276,7 @@ DEPENDENCIES
   bootstrap-sass
   byebug
   capybara
+  ckeditor!
   coffee-rails (~> 4.1.0)
   database_cleaner
   devise

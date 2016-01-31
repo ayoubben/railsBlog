@@ -9,7 +9,10 @@ p#notice = notice
     div
       h3 = @post.title
     p
-      = @post.text
+      = raw(@post.text)
+    .tags
+      = raw @post.tag_list.map{ |t| link_to t, nil, class: "white-color btn btn-#{Post::COLORS.values[rand(Post::COLORS.size)]} btn-xs"}.join(',')
+
 
   = link_to 'Edit', edit_post_path(@post)
   '|

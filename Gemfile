@@ -24,6 +24,7 @@ gem 'slim-rails'
 gem 'therubyracer', :platform=>:ruby
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 gem 'acts-as-taggable-on'
+gem 'ckeditor', github: 'galetahub/ckeditor'
 group :development do
   gem 'better_errors'
   gem 'hub', :require=>nil
