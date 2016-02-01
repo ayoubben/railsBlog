@@ -3,22 +3,28 @@
     .col-md-8
       - @posts.each do |post|
         h3
-          = link_to post.title, pages_path(id_post: post.id)
-        p.lead
-          | Tags :
-          span.tags = raw post.tag_list.map{ |t| link_to t, nil, class: "white-color btn btn-#{Post::COLORS.values[rand(Post::COLORS.size)]} btn-xs"}.join(',')
+          = link_to post.title, post_path(post.id)
+
         .pull-right
           span.glyphicon.glyphicon-time
           = time_ago_in_words(post.created_at)
+        .col-md-12
+          .littlespage
         = image_tag post.image.url(:normal), class: ' image-tag'
-        br
-        = raw(post.text)
-        = link_to pages_path(id_post: post.id), class: "btn btn-primary pull-right" do
-          | Read more
-          span.glyphicon.glyphicon-chevron-right
-        hr
-        br
-        hr
+        .white-background
+          = raw(post.text)
+          br
+          br
+          .col-md-2
+            p.lead Tags :
+          .col-md-8
+            span.tags = raw post.tag_list.map{ |t| link_to t, nil, class: "white-color btn btn-#{Post::COLORS.values[rand(Post::COLORS.size)]} btn-sm"}.join('-----')
+          .col-md-2
+            = link_to post_path(post.id), class: "btn btn-primary btn-sm pull-right" do
+              | Read more
+              span.glyphicon.glyphicon-chevron-right
+          br
+          br
 
       ul.pager
         li.previous
