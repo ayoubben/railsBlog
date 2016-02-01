@@ -25,6 +25,7 @@ gem 'therubyracer', :platform=>:ruby
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 gem 'acts-as-taggable-on'
 gem 'ckeditor', github: 'galetahub/ckeditor'
+gem 'friendly_id'
 gem 'interactor-rails'
 group :development do
   gem 'better_errors'
