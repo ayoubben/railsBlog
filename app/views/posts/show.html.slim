@@ -22,39 +22,33 @@ p#notice = notice
           span.tags = raw @post.tag_list.map{ |t| link_to t, nil, class: "white-color btn btn-#{Post::COLORS.values[rand(Post::COLORS.size)]} btn-sm"}.join('-----')
         br
         hr
-
       .well
         h4 Leave a Comment:
-        form role="form"
-          .form-group
-            textarea.form-control rows="3"
-          button.btn.btn-primary type="submit"  Submit
-      hr/
-      .media
-        a.pull-left href="#"
-          img.media-object alt="" src="http://placehold.it/64x64" /
-        .media-body
-          h4.media-heading
-            | Start Bootstrap
-            small August 25, 2014 at 9:30 PM
-          | Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-      .media
-        a.pull-left href="#"
-          img.media-object alt="" src="http://placehold.it/64x64" /
-        .media-body
-          h4.media-heading
-            | Start Bootstrap
-            small August 25, 2014 at 9:30 PM
-          | Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+        = simple_form_for(@comment ,url: comments_path, method: :post, html: { class: 'form-inline', id: 'comment-form' }, remote: true ) do |f|
+          = f.error_notification
+          .form-inputs
+            = f.hidden_field :post_id, value: @post.id
+            = f.text_area :text , class: 'form-control text', cols: 80, rows: 3, placeholder: 'Enter you text'
 
-          .media
-            a.pull-left href="#"
-              img.media-object alt="" src="http://placehold.it/64x64" /
-            .media-body
-              h4.media-heading
-                | Nested Start Bootstrap
-                small August 25, 2014 at 9:30 PM
-              | Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+          .form-actions
+            .form-group
+              = f.submit "Valider", class: "button btn btn-success pull-right"
+
+      hr/
+      #comments
+        - unless @post.comments.empty?
+          - @post.comments.each do |comment|
+            .media
+              a.pull-left href="#"
+                img.media-object alt="" src="http://placehold.it/64x64" /
+              .media-body
+                h4.media-heading
+                  | Start Bootstrap
+                  small = time_ago_in_words(comment.created_at)
+                = comment.text
+
+
+
     .col-md-4
       .well
         h4 Blog Search
@@ -93,6 +87,5 @@ p#notice = notice
 
 
 
-  = link_to 'Edit', edit_post_path(@post)
-  '|
-  = link_to 'Back', posts_path
+  br
+  = link_to 'Back', :root, class: 'bnt btn-sm btn-warning'
