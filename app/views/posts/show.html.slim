@@ -28,6 +28,7 @@ p#notice = notice
           = simple_form_for(@comment ,url: comments_path, method: :post, html: { class: 'form-inline', id: 'comment-form' }, remote: true ) do |f|
             = f.error_notification
             .form-inputs
+              = f.hidden_field :user_id, value: current_user.id
               = f.hidden_field :post_id, value: @post.id
               = f.text_area :text , class: 'form-control text', cols: 80, rows: 3, placeholder: 'Enter you text'
 
@@ -66,7 +67,7 @@ p#notice = notice
                   img.media-object alt="" src="http://placehold.it/64x64" /
                 .media-body
                   h4.media-heading
-                    | Start Bootstrap
+                    = comment.user.name
                     small = time_ago_in_words(comment.created_at)
                   = comment.text
 

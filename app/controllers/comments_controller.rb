@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
 
   private
     def create_comment_params
-      params[:comment].try(:permit, :text, :post_id)
+      params[:comment].try(:permit, :text, :post_id, :user_id)
     end
 
     def build_sub_object
