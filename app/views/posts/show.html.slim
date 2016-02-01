@@ -63,7 +63,7 @@ p#notice = notice
             - @post.comments.each do |comment|
               .media
                 a.pull-left href="#"
-                  img.media-object alt="" src="http://placehold.it/64x64" /
+                  = image_tag comment.user.avatar.url(:mini), class: 'media-object'
                 .media-body
                   h4.media-heading
                     = comment.user.name
