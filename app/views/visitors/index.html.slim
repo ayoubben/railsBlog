@@ -1,62 +1,29 @@
 .container
   .row
     .col-md-8
-      h1.page-header
-        | Page Heading
-        small Secondary Text
-      h2
-        = link_to ' Blog Post Title ', pages_path('blogpost')
-      p.lead
-        | by
-        = link_to ' Start Bootstrap ', root_path
-      p
-        span.glyphicon.glyphicon-time
-        |  Posted on August   28, 2013 at 10:00 PM
-      hr
-      =image_tag "http://placehold.it/900x300", class: 'img-responsive'
-      hr
-      p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, veritatis, tempora, necessitatibus inventore nisi quam quia repellat ut tempore laborum possimus eum dicta id animi corrupti debitis ipsum officiis rerum.
-      = link_to pages_path('blogpost'), class: "btn btn-primary" do
-        | Read me
-        span.glyphicon.glyphicon-chevron-right
-      hr
-      h2
-        = link_to ' Blog Post Title ', pages_path('blogpost')
-      p.lead
-        | by
-        = link_to ' Start Bootstrap ', root_path
-      p
-        span.glyphicon.glyphicon-time
-        |   Posted on August   28, 2013 at 10:45 PM
-      hr
-      =image_tag "http://placehold.it/900x300", class: 'img-responsive'
-      hr
-      p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, quasi, fugiat, asperiores harum voluptatum tenetur a possimus nesciunt quod accusamus saepe tempora ipsam distinctio minima dolorum perferendis labore impedit voluptates!
-      = link_to pages_path('blogpost'), class: "btn btn-primary" do
-        | Read me
-        span.glyphicon.glyphicon-chevron-right
-      hr
-      h2
-        = link_to ' Blog Post Title ', pages_path('blogpost')
-      p.lead
-        | by
-        = link_to ' Start Bootstrap ', root_path
-      p
-        span.glyphicon.glyphicon-time
-        |   Posted on August   28, 2013 at 10:45 PM
-      hr
-      =image_tag "http://placehold.it/900x300", class: 'img-responsive'
-      hr
-      p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, voluptates, voluptas dolore ipsam cumque quam veniam accusantium laudantium adipisci architecto itaque dicta aperiam maiores provident id incidunt autem. Magni, ratione.
-      = link_to pages_path('blogpost'), class: "btn btn-primary" do
-        | Read me
-        span.glyphicon.glyphicon-chevron-right
-      hr
+      - @posts.each do |post|
+        h3
+          = link_to post.title, pages_path(id_post: post.id)
+        p.lead
+          | Tags :
+          span.tags = raw post.tag_list.map{ |t| link_to t, nil, class: "white-color btn btn-#{Post::COLORS.values[rand(Post::COLORS.size)]} btn-xs"}.join(',')
+        .pull-right
+          span.glyphicon.glyphicon-time
+          = time_ago_in_words(post.created_at)
+        = image_tag post.image.url(:normal), class: ' image-tag'
+        hr
+        p =raw(post.text)
+        = link_to pages_path(id_post: post.id), class: "btn btn-primary" do
+          | Read more
+          span.glyphicon.glyphicon-chevron-right
+        hr
+
       ul.pager
         li.previous
           a href="#"  &larr; Older
         li.next
           a href="#"  Newer &rarr;
+
     .col-md-4
       .well
         h4 Blog Search
