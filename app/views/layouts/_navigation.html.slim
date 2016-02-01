@@ -1,13 +1,15 @@
-/ navigation styled for Bootstrap 3.0
-nav.navbar.navbar-inverse.navbar-fixed-top
-  .container
-    .navbar-header
-      button.navbar-toggle[type="button" data-toggle="collapse" data-target=".navbar-collapse"]
-        span.sr-only Toggle navigation
-        span.icon-bar
-        span.icon-bar
-        span.icon-bar
-      = link_to 'Home', root_path, class: 'navbar-brand'
-    .collapse.navbar-collapse#nav_header
-      ul.pull-right
+nav.navbar.navbar-fixed-top.navbar-bootsnipp.animate class=("[ ][ ]") role="navigation"
+  .container class=("[ ]")
+    /! Brand and toggle get grouped for better mobile display
+    .navbar-header class=("[ ]")
+      button.navbar-toggle class=("[ ]") data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button"
+        span.sr-only class=("[ ]")  Toggle navigation
+        span.icon-bar class=("[ ]")
+        span.icon-bar class=("[ ]")
+        span.icon-bar class=("[ ]")
+      .animbrand class=("[ ]")
+        = link_to 'MyBlog', root_path, class: 'navbar-brand animate'
+    #bs-example-navbar-collapse-1.collapse.navbar-collapse class=("[ ]")
+      ul.nav.navbar-nav.navbar-right class=("[ ]")
         == render 'layouts/navigation_links'
+
