@@ -36,19 +36,19 @@ p#notice = notice
                 = f.submit "Valider", class: "button btn btn-success pull-right"
       - else
         br
-        .col-md-12#login
+        .col-md-12#register
           h4 Connectez-vous pour laisser un commentaire :
         .col-md-12
           .col-md-6
-            .col-sm-offset-4.col-sm-4.text-center
-              = link_to 'Se connecter', '#login', class: 'btn btn-sm btn-primary btn-login'
+            .col-sm-offset-4.col-sm-4
+              = link_to 'Se connecter', '#register', class: 'btn btn-sm btn-primary btn-login'
           .col-md-6
             .col-sm-offset-4.col-sm-4.text-center
-              = link_to "S'enregistrer", '#login', class: 'btn btn-sm btn-info btn-logup'
+              = link_to "S'enregistrer", '#register', class: 'btn btn-sm btn-info btn-logup'
 
         .col-md-6#login
           = render :file => 'devise/sessions/new'
-        .col-md-6#logup
+        .col-md-6.pull-right#logup
           = render :file => 'devise/registrations/new'
           hr
           br
