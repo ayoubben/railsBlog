@@ -27,3 +27,16 @@ footer {
   margin-bottom: 0px;
   padding-bottom: 0px;
 }
+
+
+@font-face {
+  font-family: 'droit';
+  src: url('/assets/droit.ttf') format('truetype');
+
+}
+
+
+p{
+  font-family: "droit";
+  font-size: 125%;
+}

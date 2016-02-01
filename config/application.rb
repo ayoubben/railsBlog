@@ -19,6 +19,7 @@ module RailsBlog
         request_specs: false
       g.fixture_replacement :factory_girl, dir: "spec/factories"
     end
+    config.assets.paths << Rails.root.join("app", "assets", "fonts")
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers

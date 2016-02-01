@@ -11,11 +11,13 @@
           span.glyphicon.glyphicon-time
           = time_ago_in_words(post.created_at)
         = image_tag post.image.url(:normal), class: ' image-tag'
-        hr
-        p =raw(post.text)
-        = link_to pages_path(id_post: post.id), class: "btn btn-primary" do
+        br
+        = raw(post.text)
+        = link_to pages_path(id_post: post.id), class: "btn btn-primary pull-right" do
           | Read more
           span.glyphicon.glyphicon-chevron-right
+        hr
+        br
         hr
 
       ul.pager
