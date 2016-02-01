@@ -40,21 +40,20 @@ p#notice = notice
         .col-md-12#register
           h4 Connectez-vous pour laisser un commentaire :
         .col-md-12
+          .col-sm-offset-4.col-sm-4
+            = link_to  '#register', class: 'btn btn-xs btn-primary btn-login btn-with-padding' do
+              p
+                span.glyphicon.glyphicon-log-in
+                |   S'authentifier
+        .col-md-12#authentification
           .col-md-6
-            .col-sm-offset-4.col-sm-4
-              = link_to 'Se connecter', '#register', class: 'btn btn-sm btn-primary btn-login'
-          .col-md-6
-            .col-sm-offset-4.col-sm-4.text-center
-              = link_to "S'enregistrer", '#register', class: 'btn btn-sm btn-info btn-logup'
-
-        .col-md-6#login
-          = render :file => 'devise/sessions/new'
-        .col-md-6.pull-right#logup
-          = render :file => 'devise/registrations/new'
-          hr
-          br
-        .col-md-12
-          .add-padding
+            = render :file => 'devise/sessions/new'
+          .col-md-6.pull-right
+            = render :file => 'devise/registrations/new'
+            hr
+            br
+          .col-md-12
+            .add-padding
       hr/
       #comments
         .col-md-12
@@ -68,8 +67,9 @@ p#notice = notice
                 .media-body
                   h4.media-heading
                     = comment.user.name
-                    small = time_ago_in_words(comment.created_at)
-                  = comment.text
+                    small.pull-right = time_ago_in_words(comment.created_at)
+                  p
+                    = comment.text
 
 
 

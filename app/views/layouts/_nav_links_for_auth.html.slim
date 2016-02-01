@@ -1,0 +1,7 @@
+- if user_signed_in?
+  li= link_to 'Edit account', edit_user_registration_path , class: "btn btn-warning btn-xs"
+  li= link_to 'Se déconnecter', destroy_user_session_path, :method=>'delete' , class: "btn btn-danger btn-xs"
+- else
+  li= link_to 'Se connecter', new_user_session_path , class: "btn btn-primary btn-xs"
+  li= link_to "S'enregistrer", new_user_registration_path , class: "btn btn-info btn-xs"
+
