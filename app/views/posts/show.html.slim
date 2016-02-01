@@ -22,30 +22,53 @@ p#notice = notice
           span.tags = raw @post.tag_list.map{ |t| link_to t, nil, class: "white-color btn btn-#{Post::COLORS.values[rand(Post::COLORS.size)]} btn-sm"}.join('-----')
         br
         hr
-      .well
-        h4 Leave a Comment:
-        = simple_form_for(@comment ,url: comments_path, method: :post, html: { class: 'form-inline', id: 'comment-form' }, remote: true ) do |f|
-          = f.error_notification
-          .form-inputs
-            = f.hidden_field :post_id, value: @post.id
-            = f.text_area :text , class: 'form-control text', cols: 80, rows: 3, placeholder: 'Enter you text'
+      - if user_signed_in?
+        .well
+          h4 laisser un commentaire
+          = simple_form_for(@comment ,url: comments_path, method: :post, html: { class: 'form-inline', id: 'comment-form' }, remote: true ) do |f|
+            = f.error_notification
+            .form-inputs
+              = f.hidden_field :post_id, value: @post.id
+              = f.text_area :text , class: 'form-control text', cols: 80, rows: 3, placeholder: 'Enter you text'
 
-          .form-actions
-            .form-group
-              = f.submit "Valider", class: "button btn btn-success pull-right"
+            .form-actions
+              .form-group.add-padding
+                = f.submit "Valider", class: "button btn btn-success pull-right"
+      - else
+        br
+        .col-md-12#login
+          h4 Connectez-vous pour laisser un commentaire :
+        .col-md-12
+          .col-md-6
+            .col-sm-offset-4.col-sm-4.text-center
+              = link_to 'Se connecter', '#login', class: 'btn btn-sm btn-primary btn-login'
+          .col-md-6
+            .col-sm-offset-4.col-sm-4.text-center
+              = link_to "S'enregistrer", '#login', class: 'btn btn-sm btn-info btn-logup'
 
+        .col-md-6#login
+          = render :file => 'devise/sessions/new'
+        .col-md-6#logup
+          = render :file => 'devise/registrations/new'
+          hr
+          br
+        .col-md-12
+          .add-padding
       hr/
       #comments
-        - unless @post.comments.empty?
-          - @post.comments.each do |comment|
-            .media
-              a.pull-left href="#"
-                img.media-object alt="" src="http://placehold.it/64x64" /
-              .media-body
-                h4.media-heading
-                  | Start Bootstrap
-                  small = time_ago_in_words(comment.created_at)
-                = comment.text
+        .col-md-12
+          .add-padding
+        .col-md-12
+          - unless @post.comments.empty?
+            - @post.comments.each do |comment|
+              .media
+                a.pull-left href="#"
+                  img.media-object alt="" src="http://placehold.it/64x64" /
+                .media-body
+                  h4.media-heading
+                    | Start Bootstrap
+                    small = time_ago_in_words(comment.created_at)
+                  = comment.text
 
 
 

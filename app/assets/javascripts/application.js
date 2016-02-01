@@ -16,3 +16,8 @@
 //= require bootstrap-sprockets
 //= require ckeditor/init
 //= require_tree .
+
+$(document).on('ready page:load', function() {
+    $("#login").hide();
+    $("#logup").hide();
+});

@@ -3,27 +3,27 @@
 
 
   .form-inputs
-    .form-group
+    .form-group.add-padding
       .col-md-offset-1.col-lg-3.control-label = f.label :image, "Image de l'article"
       .col-lg-8
         = f.file_field :image, class: "form-control"
 
-    .form-group
+    .form-group.add-padding
       .col-md-offset-1.col-lg-3.control-label = f.label :title, "Titre de l'article"
       .col-lg-8
         = f.text_field :title, class: "form-control"
 
-    .form-group
+    .form-group.add-padding
       .col-md-offset-1.col-lg-3.control-label = f.label :tag_list, "Mot clés"
       .col-lg-8
         = f.text_field :tag_list, class: "form-control"
 
-    .form-group
+    .form-group.add-padding
       .col-md-offset-1.col-lg-3.control-label = f.label :text, "text de l'article"
       .col-lg-8
         = f.cktext_area :text, class: 'form-control'
 
   .form-actions
-    .form-group
+    .form-group.add-padding
       = f.submit "Valider création", class: "button btn btn-success btn-xs pull-right"
 
