@@ -27,6 +27,7 @@ gem 'acts-as-taggable-on'
 gem 'ckeditor', github: 'galetahub/ckeditor'
 gem 'friendly_id'
 gem 'interactor-rails'
+gem 'will_paginate-bootstrap'
 group :development do
   gem 'better_errors'
   gem 'hub', :require=>nil

@@ -25,12 +25,8 @@
               span.glyphicon.glyphicon-chevron-right
           br
           br
-
-      ul.pager
-        li.previous
-          a href="#"  &larr; Older
-        li.next
-          a href="#"  Newer &rarr;
+      #pagination.pager
+        = will_paginate @posts, :previous_label => 'Précédent', :next_label => 'Suivant', renderer: BootstrapPagination::Rails
 
     .col-md-4
       .well
