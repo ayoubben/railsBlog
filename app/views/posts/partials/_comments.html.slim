@@ -1,0 +1,14 @@
+.col-md-12
+  .add-padding
+.col-md-12
+  - unless post.comments.empty?
+    - post.comments.each do |comment|
+      .media
+        a.pull-left href="#"
+          = image_tag comment.user.avatar.url(:mini), class: 'media-object'
+        .media-body
+          h4.media-heading
+            = comment.user.name
+            small.pull-right = time_ago_in_words(comment.created_at)
+          p
+            = comment.text

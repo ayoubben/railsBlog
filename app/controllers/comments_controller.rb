@@ -1,6 +1,5 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!
-  load_and_authorize_resource
   before_action :build_sub_object, only: [:create]
 
   def create

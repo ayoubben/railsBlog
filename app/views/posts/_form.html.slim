@@ -4,23 +4,23 @@
 
   .form-inputs
     .form-group.add-padding
-      .col-md-offset-1.col-lg-3.control-label = f.label :image, "Image de l'article"
-      .col-lg-8
+      .col-lg-3.control-label = f.label :image, "Image de l'article"
+      .col-lg-9
         = f.file_field :image, class: "form-control"
 
     .form-group.add-padding
-      .col-md-offset-1.col-lg-3.control-label = f.label :title, "Titre de l'article"
-      .col-lg-8
+      .col-lg-3.control-label = f.label :title, "Titre de l'article"
+      .col-lg-9
         = f.text_field :title, class: "form-control"
 
     .form-group.add-padding
-      .col-md-offset-1.col-lg-3.control-label = f.label :tag_list, "Mot clés"
-      .col-lg-8
+      .col-lg-3.control-label = f.label :tag_list, "Mot clés"
+      .col-lg-9
         = f.text_field :tag_list, class: "form-control"
 
     .form-group.add-padding
-      .col-md-offset-1.col-lg-3.control-label = f.label :text, "text de l'article"
-      .col-lg-8
+      .col-lg-3.control-label = f.label :text, "text de l'article"
+      .col-lg-9
         = f.cktext_area :text, class: 'form-control'
 
   .form-actions

@@ -1,0 +1,12 @@
+.well
+  h4 laisser un commentaire
+  = simple_form_for(comment ,url: comments_path, method: :post, html: { class: 'form-inline', id: 'comment-form' }, remote: true ) do |f|
+    = f.error_notification
+    .form-inputs
+      = f.hidden_field :user_id, value: current_user.id
+      = f.hidden_field :post_id, value: post.id
+      = f.text_area :text , class: 'form-control text', cols: 80, rows: 3, placeholder: 'Enter you text'
+
+    .form-actions
+      .form-group.add-padding
+        = f.submit "Valider", class: "button btn btn-success pull-right"

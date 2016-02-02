@@ -1,0 +1,19 @@
+h2
+  = post.title
+
+.pull-right
+  span.glyphicon.glyphicon-time
+  = time_ago_in_words(post.created_at)
+.col-md-12
+  .littlespage
+= image_tag post.image.url(:normal), class: ' image-tag'
+.white-background
+  = raw(post.text)
+  br
+  br
+  .col-md-2
+    p.lead Tags :
+  .col-md-10
+    span.tags = raw post.tag_list.map{ |t| link_to t, nil, class: "white-color btn btn-#{Post::COLORS.values[rand(Post::COLORS.size)]} btn-sm"}.join('-----')
+  br
+  hr

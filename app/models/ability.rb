@@ -2,9 +2,9 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    if user.super_user?
+    if !user.nil? && user.super_user?
       can :manage, :all
-    elsif user.simple_user?
+    elsif !user.nil? && user.simple_user?
       can :create, Comment
       can :read, :all
     else
