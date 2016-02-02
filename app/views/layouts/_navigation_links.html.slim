@@ -1,5 +1,6 @@
-li
-  = link_to 'Ajouter article', new_post_path, class: "animate"
+- if user_signed_in? && current_user.super_user?
+  li
+    = link_to 'Ajouter article', new_post_path, class: "animate"
 == render 'layouts/nav_links_for_auth'
 
 

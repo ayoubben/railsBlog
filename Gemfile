@@ -28,6 +28,7 @@ gem 'ckeditor', github: 'galetahub/ckeditor'
 gem 'friendly_id'
 gem 'interactor-rails'
 gem 'will_paginate-bootstrap'
+gem 'cancancan'
 group :development do
   gem 'better_errors'
   gem 'hub', require: nil

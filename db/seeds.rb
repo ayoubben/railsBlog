@@ -7,5 +7,10 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 user = CreateAdminService.new.call
 puts 'CREATED ADMIN USER: ' << user.email
-# Environment variables (ENV['...']) can be set in the file config/application.yml.
-# See http://railsapps.github.io/rails-environment-variables.html
+
+
+
+Role.create({name: "simple_user", description: "Can create comment"})
+role = Role.create({name: "super_user", description: "can menage all"})
+
+User.create({name: "Bennani ayoub", email: "ayoub-bennani@hotmail.com", password: "monpassword", password_confirmation: "monpassword", role_id: role.id})
