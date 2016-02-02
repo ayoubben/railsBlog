@@ -3,14 +3,6 @@ class PostsController < ApplicationController
   load_and_authorize_resource
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
-  # GET /posts
-  # GET /posts.json
-  def index
-    @posts = Post.paginate(page: params[:page], per_page: 5)
-  end
-
-  # GET /posts/1
-  # GET /posts/1.json
   def show
     @post = Post.find(params[:id])
     if request.path != post_path(@post)
@@ -19,33 +11,25 @@ class PostsController < ApplicationController
     @comment = Comment.new
   end
 
-  # GET /posts/new
   def new
     @post = Post.new
   end
 
-  # GET /posts/1/edit
   def edit
   end
 
-  # POST /posts
-  # POST /posts.json
   def create
     @post = Post.new(post_params)
 
     respond_to do |format|
       if @post.save
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
-        format.json { render :show, status: :created, location: @post }
       else
         format.html { render :new }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # PATCH/PUT /posts/1
-  # PATCH/PUT /posts/1.json
   def update
     respond_to do |format|
       if @post.update(post_params)
@@ -58,8 +42,6 @@ class PostsController < ApplicationController
     end
   end
 
-  # DELETE /posts/1
-  # DELETE /posts/1.json
   def destroy
     @post.destroy
     respond_to do |format|

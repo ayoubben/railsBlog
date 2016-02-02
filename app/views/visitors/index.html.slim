@@ -1,7 +1,6 @@
 - @posts.each do |post|
-  h3
+  h2.title-post
     = link_to post.title, post_path(post.id)
-
   .pull-right
     span.glyphicon.glyphicon-time
     = time_ago_in_words(post.created_at)
@@ -24,7 +23,6 @@
     br
 #pagination.pager
   = will_paginate @posts, :previous_label => 'Précédent', :next_label => 'Suivant', renderer: BootstrapPagination::Rails
-
 
 hr
 footer

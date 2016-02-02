@@ -35,10 +35,14 @@ footer {
   padding-bottom: 0px;
 }
 
+@font-face {
+  font-family: 'soukalisa';
+  src: url('/assets/soukalisa.ttf') format('truetype');
+}
 
 @font-face {
-  font-family: 'droit';
-  src: url('/assets/droit.ttf') format('truetype');
+  font-family: 'opensans';
+  src: url('/assets/opensans.ttf') format('truetype');
 }
 @font-face {
   font-family: 'merri';
@@ -46,23 +50,35 @@ footer {
   letter-spacing: 0.01rem;
   font-size: 1.8rem;
   line-height: 1.75em;
-
 }
 
-.add-margin{
-  margin-top: 10px;
+.soukalisa{
+  font-family: "soukalisa";
+}
 
+.title-post{
+  font-family: "opensans";
 }
 
 p{
   font-family: "merri";
-
 }
+
+.add-margin{
+  margin-top: 10px;
+}
+
 
 .littlespage{
   height: 5px;
 }
 
+.space15{
+  height: 15px;
+}
+.space25{
+  height: 25px;
+}
 .text
 {
 width: auto;
