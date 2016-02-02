@@ -5,10 +5,4 @@ $(document).on('ready page:load', function() {
     var url = window.location.href;
     $("#comments").load(url + " #comments");
   });
-
-  $( ".btn-login" ).click(function() {
-    $( "#authentification" ).toggle( 300 );
-    return false;
-   });
-
 });

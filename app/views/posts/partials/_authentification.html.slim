@@ -1,18 +1,18 @@
 br
 .col-md-12#register
   h4 Connectez-vous pour laisser un commentaire :
-.col-md-12
-  .col-sm-offset-4.col-sm-4
-    = link_to  '#register', class: 'btn btn-xs btn-primary btn-login btn-with-padding' do
+.col-md-6
+  .col-sm-offset-3.col-sm-3
+    = link_to  new_user_session_path, class: 'btn btn-xs btn-primary btn-with-padding' do
       p
         span.glyphicon.glyphicon-log-in
-        |   S'authentifier
-.col-md-12#authentification
-  .col-md-6
-    = render :file => 'devise/sessions/new'
-  .col-md-6.pull-right
-    = render :file => 'devise/registrations/new'
-    hr
-    br
+        |   Se connecter
+.col-md-6
+  .col-sm-offset-3.col-sm-3
+    = link_to  new_user_registration_path, class: 'btn btn-xs btn-info btn-with-padding' do
+      p
+        span.glyphicon.glyphicon-list
+        |   S'enregistrer
+
   .col-md-12
     .add-padding
