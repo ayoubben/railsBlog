@@ -21,7 +21,7 @@ gem 'figaro'
 gem 'pg'
 gem 'simple_form'
 gem 'slim-rails'
-gem 'therubyracer', :platform=>:ruby
+gem 'therubyracer', platform: :ruby
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 gem 'acts-as-taggable-on'
 gem 'ckeditor', github: 'galetahub/ckeditor'
@@ -30,7 +30,7 @@ gem 'interactor-rails'
 gem 'will_paginate-bootstrap'
 group :development do
   gem 'better_errors'
-  gem 'hub', :require=>nil
+  gem 'hub', require: nil
   gem 'rails_layout'
   gem 'spring-commands-rspec'
 end
