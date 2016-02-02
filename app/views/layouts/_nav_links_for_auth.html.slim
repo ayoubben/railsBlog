@@ -1,6 +1,9 @@
 li
   a.dropdown-toggle.animate class=("[ ][ ]") data-toggle="dropdown" href="#"
-    | Utilisateur
+    - if user_signed_in?
+      = current_user.name
+    - else
+      | Utilisateur
     span.caret class=("[ ]")
   - if user_signed_in?
     ul.dropdown-menu class=("[ ]") role="menu"
