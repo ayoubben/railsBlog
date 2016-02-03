@@ -9,7 +9,16 @@ h2.title-post
 .white-background
   = raw(post.text)
   br
-  br
+  hr
+  - unless post.video_url.nil?
+    p.lead Video Youtube :
+    section.section.video-display#video
+      .video-content
+        .col-md-11.col-sm-11.col-xs-12
+          .video-player
+            = embed(post.video_url)
+
+  hr
   .col-md-2
     p.lead Tags :
   .col-md-10

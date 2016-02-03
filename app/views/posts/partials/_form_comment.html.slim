@@ -5,7 +5,7 @@
     .form-inputs
       = f.hidden_field :user_id, value: current_user.id
       = f.hidden_field :post_id, value: post.id
-      = f.text_area :text , class: 'form-control text', cols: 80, rows: 3, placeholder: 'Enter you text'
+      = f.text_area :text , class: 'form-control text', rows: 3, placeholder: 'Enter you text'
 
     .form-actions
       .form-group.add-padding
