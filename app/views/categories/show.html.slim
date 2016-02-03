@@ -8,7 +8,7 @@
     .littlespage
   = image_tag post.image.url(:normal), class: ' image-tag'
   .white-background
-    = raw(post.text)
+    = raw(post.first_text_lines(3))
     br
     br
     .col-md-2
