@@ -9,9 +9,14 @@
         .media-body
           h4.media-heading
             = comment.user.name
-            small.pull-right = time_ago_in_words(comment.created_at)
+            - if user_signed_in? && (comment.user == current_user || current_user.super_user?)
+              = link_to comment, data: {confirm: 'Are you sure?'}, method: :delete, class: 'pull-right' do
+                span.glyphicon.glyphicon-trash
           p
             = comment.text
+          small.pull-right = time_ago_in_words(comment.created_at)
+
+
 .col-md-12.space25
 br
 hr
