@@ -17,6 +17,8 @@ class Post < ActiveRecord::Base
       'rouge' => 'rouge'
     }.freeze
 
+  validates :title, :text, :category_id, presence: true
+
   has_many :comments
   belongs_to :category
 
