@@ -52,10 +52,11 @@ test:
 
 production:
   adapter:  postgresql
-  host:     localhost
+  host:     ENV["HOST_DB"]
   encoding: unicode
-  database: railsBlog_production
+  database: ENV["DATABASE_DB"]
+  port:     5432
   pool:     5
-  username: ayoubben
-  password: monpassword
+  username: ENV["USER_NAME_DB"]
+  password: ENV["PASSWORD_DB"]
   template: template0
