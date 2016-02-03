@@ -5,10 +5,13 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-user = CreateAdminService.new.call
-puts 'CREATED ADMIN USER: ' << user.email
+# user = CreateAdminService.new.call
+# puts 'CREATED ADMIN USER: ' << user.email
+
+puts '-------------------'
 Role.create(name: "simple_user", description: "Can create comment")
 role = Role.create(name: "super_user", description: "can menage all")
+puts '--------------------'
 User.create(name: ENV["SUPER_USER_NAME"], email: ENV["SUPER_USER_EMAIL"], password: ENV["SUPER_USER_PASSWORD"], password_confirmation: ENV["SUPER_USER_PASSWORD"], role_id: role.id)
 Category.find_or_create_by(title: "Mode", code: "MODE")
 Category.find_or_create_by(title: "Beauté", code: "BEAUTE")
