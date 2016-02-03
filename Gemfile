@@ -29,7 +29,7 @@ gem 'friendly_id'
 gem 'interactor-rails'
 gem 'will_paginate-bootstrap'
 gem 'cancancan'
-gem 'rails_12factor'
+gem 'rails_12factor', group: :production
 group :development do
   gem 'better_errors'
   gem 'hub', require: nil
