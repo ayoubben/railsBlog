@@ -46,3 +46,11 @@ Credits
 
 License
 -------
+
+Next Stories
+------------
+
+ + Add youtube video to posts
+ + Add Validation
+ + Add elasticsearch
+
