@@ -1,3 +1,12 @@
+li class= "#{'open' if !@item.nil? && (@item == 'MODE') }"
+  = link_to 'Mode', category_path(Category.find_by(code: 'MODE')), class: "animate"
+li class= "#{'open' if !@item.nil? && @item == 'BEAUTE' }"
+  = link_to 'Beauté', category_path(Category.find_by(code: 'BEAUTE')), class: "animate"
+li class= "#{'open' if !@item.nil? && @item == 'CUISINE' }"
+  = link_to 'Cuisine', category_path(Category.find_by(code: 'CUISINE')), class: "animate"
+li class= "#{'open' if !@item.nil? && @item == 'BETRE' }"
+  = link_to 'Bien être', category_path(Category.find_by(code: 'BETRE')), class: "animate"
+
 - if user_signed_in? && current_user.super_user?
   li
     = link_to 'Ajouter article', new_post_path, class: "animate"

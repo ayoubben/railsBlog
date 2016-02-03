@@ -18,6 +18,7 @@ class Post < ActiveRecord::Base
     }.freeze
 
   has_many :comments
+  belongs_to :category
 
   friendly_id :title, use: [:slugged, :history]
 
