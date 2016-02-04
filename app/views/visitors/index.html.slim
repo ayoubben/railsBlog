@@ -6,7 +6,12 @@
     = time_ago_in_words(post.created_at)
   .col-md-12
     .littlespage
-  = image_tag post.image.url(:normal), class: ' image-tag'
+  .wrapper
+    = image_tag post.image.url(:normal), class: 'image-tag'
+    - unless post.category.code == Category.find_by(code: 'NONE')
+      .ribbon-wrapper-green
+        .ribbon-green
+          = post.category.title
   .white-background
     = raw(post.first_text_lines(3))
     br
