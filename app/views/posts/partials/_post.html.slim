@@ -10,7 +10,7 @@ h2.title-post
   = raw(post.text)
   br
   hr
-  - unless post.video_url.nil?
+  - unless post.video_url.empty?
     p.lead Video Youtube :
     section.section.video-display#video
       .video-content
@@ -18,7 +18,7 @@ h2.title-post
           .video-player
             = embed(post.video_url)
 
-  hr
+    hr
   .col-md-2
     p.lead Tags :
   .col-md-10
