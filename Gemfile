@@ -30,6 +30,8 @@ gem 'interactor-rails'
 gem 'will_paginate-bootstrap'
 gem 'cancancan'
 gem 'rails_12factor', group: :production
+gem 'rmagick'
+gem 'fileutils'
 group :development do
   gem 'better_errors'
   gem 'hub', require: nil
