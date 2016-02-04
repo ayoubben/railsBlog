@@ -153,3 +153,16 @@ hr {
 .ribbon-green:after {
   right: 0;
 }
+
+@media only screen and (max-width: 768px) {
+
+.ribbon-wrapper-green {
+  width: 85px;
+  height: 88px;
+  overflow: hidden;
+  position: absolute;
+  top: 12px;
+  right: -3px;
+}
+
+}
