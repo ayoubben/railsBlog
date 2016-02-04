@@ -41,16 +41,16 @@ footer {
 }
 @font-face {
   font-family: 'soukalisa';
-  src: url('/assets/soukalisa.ttf') format('truetype');
+  src: asset-url('soukalisa.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'opensans';
-  src: url('/assets/opensans.ttf') format('truetype');
+  src: asset-url('opensans.ttf') format('truetype');
 }
 @font-face {
   font-family: 'merri';
-  src: url('/assets/Merriweather-Regular.ttf') format('truetype');
+  src: asset-url('Merriweather-Regular.ttf') format('truetype');
   letter-spacing: 0.01rem;
   font-size: 1.8rem;
   line-height: 1.75em;
