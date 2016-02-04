@@ -37,6 +37,6 @@ class Post < ActiveRecord::Base
   acts_as_taggable
 
   def first_text_lines n
-    self.text.split("\n").first(n).join("\n")
+    "#{self.text.split("\n").first(n).join("\n")} ..."
   end
 end
