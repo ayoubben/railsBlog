@@ -30,6 +30,6 @@ h2.title-post
     .col-md-2
       p.lead Tags :
     .col-md-10
-      span.tags = raw post.tag_list.map{ |t| link_to t, nil, class: "white-color btn btn-#{Post::COLORS.values[rand(Post::COLORS.size)]} btn-sm"}.join('-----')
+      span.tags = raw post.tag_list.map{ |t| link_to t, tag_path(t), class: "white-color btn btn-#{Post::COLORS.values[rand(Post::COLORS.size)]} btn-sm"}.join('-----')
     br
     hr
