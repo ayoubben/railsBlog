@@ -28,13 +28,13 @@
               = b.label
 
     .form-group.add-padding
-      .col-lg-12
-        = f.cktext_area :text, class: 'form-control', placeholder: "text de l'article"
-
-    .form-group.add-padding
       .col-lg-3.control-label = f.label :video_url, "Youtube video url"
       .col-lg-9
         = f.text_field :video_url, class: "form-control"
+
+    .form-group.add-padding
+      .col-lg-12
+        = f.cktext_area :text, class: 'form-control', placeholder: "text de l'article"
 
   .form-actions
     .form-group.add-padding
