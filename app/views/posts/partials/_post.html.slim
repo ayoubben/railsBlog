@@ -5,8 +5,15 @@ h2.title-post
   = time_ago_in_words(post.created_at)
 .col-md-12
   .littlespage
+
 = image_tag post.image.url(:normal), class: ' image-tag'
 .white-background
+  - if user_signed_in? && current_user.super_user?
+    = link_to post, data: {confirm: 'Are you sure?'}, method: :delete, class: 'pull-right btn btn-sm btn-danger ' do
+      span.glyphicon.glyphicon-trash
+      |  Supprimer Article
+    br
+  hr
   = raw(post.text)
   br
   hr
