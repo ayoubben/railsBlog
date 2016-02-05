@@ -14,21 +14,22 @@ h2.title-post
       |  Supprimer Article
     br
     hr
-  = raw(post.text)
-  br
-  hr
-  - unless post.video_url.empty?
-    p.lead Video Youtube :
-    section.section.video-display#video
-      .video-content
-        .col-md-11.col-sm-11.col-xs-12
-          .video-player
-            = embed(post.video_url)
-
+  .padding-post
+    = raw(post.text)
+    br
     hr
-  .col-md-2
-    p.lead Tags :
-  .col-md-10
-    span.tags = raw post.tag_list.map{ |t| link_to t, nil, class: "white-color btn btn-#{Post::COLORS.values[rand(Post::COLORS.size)]} btn-sm"}.join('-----')
-  br
-  hr
+    - unless post.video_url.empty?
+      p.lead Video Youtube :
+      section.section.video-display#video
+        .video-content
+          .col-md-11.col-sm-11.col-xs-12
+            .video-player
+              = embed(post.video_url)
+
+      hr
+    .col-md-2
+      p.lead Tags :
+    .col-md-10
+      span.tags = raw post.tag_list.map{ |t| link_to t, nil, class: "white-color btn btn-#{Post::COLORS.values[rand(Post::COLORS.size)]} btn-sm"}.join('-----')
+    br
+    hr

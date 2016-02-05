@@ -19,16 +19,14 @@ CKEDITOR.editorConfig = function (config) {
   config.uiColor = "#ecf0f1";
 
   config.toolbar_Full = [
-    '/', {
-      name: 'basicstyles',
-      items: ['Bold', 'Italic', 'Underline', 'Strike', '-', 'RemoveFormat']
-    }, {
-      name: 'paragraph',
-      items: ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-']
-    }, {
-      name: 'links',
-      items: ['Link', 'Unlink']
-    }
+  '/',
+  { name: 'basicstyles', items : [ 'Bold','Italic','Underline','Strike' ] },
+  { name: 'paragraph', items : [ 'NumberedList','BulletedList','-','Blockquote',
+  '-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock' ] },
+  { name: 'links', items : [ 'Link','Unlink' ] },
+  { name: 'insert', items : [ 'Image','HorizontalRule','Smiley'] },
+  { name: 'colors', items : [ 'TextColor','BGColor' ] },
+  { name: 'styles', items : [ 'Styles','Format','Font','FontSize' ] },
   ];
   config.toolbar = 'Full';
 }
