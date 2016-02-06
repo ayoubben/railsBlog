@@ -9,6 +9,9 @@ h2.title-post
 = image_tag post.image.url(:normal), class: ' image-tag'
 .white-background
   - if user_signed_in? && current_user.super_user?
+    = link_to edit_post_path(post), class: 'pull-left btn btn-sm btn-warning ' do
+      span.glyphicon.glyphicon-edit
+      |  Modifier Article
     = link_to post, data: {confirm: 'Are you sure?'}, method: :delete, class: 'pull-right btn btn-sm btn-danger ' do
       span.glyphicon.glyphicon-trash
       |  Supprimer Article
