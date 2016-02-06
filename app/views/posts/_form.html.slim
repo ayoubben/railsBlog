@@ -16,7 +16,7 @@
     .form-group.add-padding
       .col-lg-3.control-label = f.label :tag_list, "Mot clés"
       .col-lg-9
-        = f.text_field :tag_list, class: "form-control"
+        = f.text_field :tag_list, class: "form-control", value: @post.tag_list.join(", ")
 
     .form-group.add-padding
       .col-lg-3.control-label = f.label :category_id, "Categorie"
