@@ -36,7 +36,7 @@ class Post < ActiveRecord::Base
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
   acts_as_taggable
 
-  def first_text_lines n
+  def first_text_lines(n)
     "#{self.text.split("\n").first(n).join("\n")} ..."
   end
 end

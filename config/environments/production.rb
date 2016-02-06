@@ -79,12 +79,12 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   config.paperclip_defaults = {
-  storage: :s3,
-  s3_region: 'eu-west-1',
-  s3_credentials: {
-    bucket: 'sk-blog',
-    access_key_id: ENV["ACCESS_KEY_ID"],
-    secret_access_key: ENV["SECRET_ACCESS_KEY"]
+    storage: :s3,
+    s3_region: 'eu-west-1',
+    s3_credentials: {
+      bucket: 'sk-blog',
+      access_key_id: ENV["ACCESS_KEY_ID"],
+      secret_access_key: ENV["SECRET_ACCESS_KEY"]
     }
   }
 end
