@@ -3,18 +3,10 @@ class Post < ActiveRecord::Base
 
   COLORS =
     {
-      'vert1' => 'vert1',
-      'vert2' => 'vert2',
-      'blue1' => 'blue1',
-      'move1' => 'move1',
-      'darkblue' => 'darkblue',
-      'vert3' => 'vert3',
-      'vert4' => 'vert4',
-      'blue2' => 'blue2',
-      'move2' => 'move2',
-      'darkblue2' => 'darkblue2',
-      'carrot' => 'carrot',
-      'rouge' => 'rouge'
+      'info' => 'info',
+      'move' => 'move',
+      'warning' => 'warning',
+      'success' => 'success'
     }.freeze
 
   validates :title, :text, :category_id, presence: true
@@ -37,6 +29,6 @@ class Post < ActiveRecord::Base
   acts_as_taggable
 
   def first_text_lines(n)
-    "#{self.text.split("\n").first(n).join("\n")} ..."
+    self.text.split("\n").first(n).join("\n")
   end
 end

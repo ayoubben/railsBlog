@@ -7,7 +7,11 @@
 footer {
     margin: 50px 0;
 }
-
+.btn-tag{
+  margin-left: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
 .btn-with-padding{
   padding-left: 15px;
   padding-right: 15px;
@@ -51,9 +55,6 @@ footer {
 @font-face {
   font-family: 'merri';
   src: asset-url('Merriweather-Regular.ttf') format('truetype');
-  letter-spacing: 0.01rem;
-  font-size: 1.8rem;
-  line-height: 1.75em;
 }
 
 .soukalisa{
@@ -65,7 +66,11 @@ footer {
 }
 
 p{
-  font-family: "merri";
+  font-family: Georgia,Times New Roman,serif;
+  font-size: 16px;
+  line-height: 23px;
+  text-align: justify;
+
 }
 
 .add-margin{
@@ -90,7 +95,7 @@ height: auto;
 }
 
 hr {
-  color: #ff0000;
+  border-top: 1px solid #5fb0e4;
 }
 
 .media{
