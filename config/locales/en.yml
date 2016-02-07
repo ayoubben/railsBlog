@@ -21,3 +21,6 @@
 
 en:
   hello: "Hello world"
+  will_paginate:
+    previous_label: <i class="glyphicon glyphicon-menu-left"></i>
+    next_label: <i class="glyphicon glyphicon-menu-right"></i>

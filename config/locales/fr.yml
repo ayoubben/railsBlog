@@ -1,4 +1,7 @@
 fr:
+  will_paginate:
+    previous_label: <i class="glyphicon glyphicon-arrow-left"></i> Précédent
+    next_label: Suivant <i class="glyphicon glyphicon-arrow-right"></i>
   activerecord:
     errors:
       messages:

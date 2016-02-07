@@ -34,5 +34,5 @@
           | Laisser un commentaire...
         br
 #pagination.pager
-  = will_paginate @posts, :previous_label => 'Précédent', :next_label => 'Suivant', renderer: BootstrapPagination::Rails
+  = will_paginate @posts, class:'will_paginate', renderer: BootstrapPagination::Rails
 br
