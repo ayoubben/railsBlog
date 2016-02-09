@@ -1,11 +1,41 @@
-/*!
- * Start Bootstrap - Blog Home HTML Template (http://startbootstrap.com)
- * Code licensed under the Apache License v2.0.
- * For details, see http://www.apache.org/licenses/LICENSE-2.0.
- */
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700,600);
 
-footer {
-    margin: 50px 0;
+html,
+body {
+  height: 100%;
+  /* The html and body elements cannot have any padding or margin. */
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.row {
+  margin-left:0px;
+  margin-right:0px;
+}
+
+/* Set the fixed height of the footer here */
+#footer {
+  height: 60px;
+  background-color: #f5f5f5;
+  margin-top:50px;
+  padding-top:20px;
+  padding-bottom:20px;
+}
+
+section {
+  color: #ffffff;
+  min-height: 400px;
+  height: auto !important;
+  height: 100%;
+  padding-top:100px;
+}
+
+.h1_footer{
+  color: #3885B7;
+}
+.footer  {
+  border-top: 1px solid #5fb0e4;
+
 }
 #pagination ul li span{
   margin: 5px;
@@ -172,6 +202,7 @@ hr {
 .ribbon-green:after {
   right: 0;
 }
+
 
 @media only screen and (max-width: 999px) {
 
