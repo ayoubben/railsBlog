@@ -1,0 +1,16 @@
+h1.text-center Messages recus
+-@messages.all.each do  |message|
+  .col-xs-12
+    .panel.panel-default.panel-google-plus
+      .panel-heading
+        = link_to message, data: {confirm: 'Are you sure?'}, method: :delete, class: 'pull-right' do
+          span.glyphicon.glyphicon-trash
+        h3 =message.name
+        h5
+          span =message.email
+      .panel-body
+        p =message.text
+
+#pagination.pager
+  = will_paginate @messages, class:'will_paginate', renderer: BootstrapPagination::Rails
+br

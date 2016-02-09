@@ -3,16 +3,17 @@
     .row.form-group
       .col-md-12
         h1.h1_footer Contact Us
-      .col-xs-5
-        input#firstName.form-control name="name" placeholder=("Your Name") type="text" /
-      .col-xs-7
-        input.form-control name="email" placeholder="Email" type="text" /
-    .row.form-group
-      .col-xs-12
-        textarea.form-control placeholder="Message"
-    .row.form-group
-      .col-xs-12
-        button.btn.btn-default.pull-right Contact Us
+      = simple_form_for(@message) do |f|
+        .col-xs-5
+          = f.text_field :name, class: "form-control",id: "firstName", placeholder: "Your Name"
+        .col-xs-7
+          = f.email_field :email, class: "form-control", placeholder: "Email"
+        .row.form-group
+          .col-xs-12.margin-form
+            = f.text_area :text, class: "form-control", placeholder: "Message"
+        .row.form-group
+          .col-xs-12
+            button.btn.btn-default.pull-right Contact Us
   /! /row
   .col-sm-4.text-center
     .row.form-group

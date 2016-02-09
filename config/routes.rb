@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   resources :posts
   resources :comments
   resources :categories
+  resources :messages
 end
