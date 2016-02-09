@@ -202,6 +202,24 @@ hr {
 .ribbon-green:after {
   right: 0;
 }
+.tooltip > .tooltip-inner {
+      padding-left: 10px;
+      padding-right: 10px;
+      font-size: 17px;
+      font-family: 'opensans';
+    }
+.facebook  + .tooltip > .tooltip-inner {background-color: #3D5AA8;}
+.facebook + .tooltip > .tooltip-arrow{border-bottom-color:#3D5AA8; }
+
+.twitter  + .tooltip > .tooltip-inner{background-color: #24ADE3;}
+.twitter + .tooltip > .tooltip-arrow{border-bottom-color:#24ADE3; }
+
+.instagram  + .tooltip > .tooltip-inner{background-color: #221E1F;}
+.instagram + .tooltip > .tooltip-arrow{border-bottom-color:#221E1F; }
+
+.youtube  + .tooltip > .tooltip-inner{background-color: #DB140F;}
+.youtube + .tooltip > .tooltip-arrow{border-bottom-color:#DB140F; }
+
 
 
 @media only screen and (max-width: 999px) {

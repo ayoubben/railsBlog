@@ -6,12 +6,7 @@
       .col-xs-5
         input#firstName.form-control name="name" placeholder=("Your Name") type="text" /
       .col-xs-7
-        input#organization.form-control name="organization" placeholder=("Company or Organization") type="text" /
-    .row.form-group
-      .col-xs-7
         input.form-control name="email" placeholder="Email" type="text" /
-      .col-xs-5
-        input.form-control name="phone" placeholder="Phone" type="text" /
     .row.form-group
       .col-xs-12
         textarea.form-control placeholder="Message"
@@ -25,14 +20,14 @@
         h1.h1_footer join Us
     ul.list-inline.center-block
       li
-        a href="http://facebook.com/"
+        a.facebook href="http://facebook.com/" data-original-title="Facebook" data-toggle="tooltip" data-placement="bottom"
           =image_tag("fb.jpg")
       li
-        a href="http://twitter.com/"
+        a.twitter href="http://twitter.com/" data-original-title="Twitter" data-toggle="tooltip" data-placement="bottom"
           =image_tag("tw.jpg")
       li
-        a href="http://instagram.com/"
+        a.instagram href="http://instagram.com/" data-original-title="Instagram" data-toggle="tooltip" data-placement="bottom"
           =image_tag("ins.jpg")
       li
-        a href="http://youtube.com/"
+        a.youtube href="http://youtube.com/" data-original-title="Youtube" data-toggle="tooltip"  data-placement="bottom"
           =image_tag("yt.jpg")
