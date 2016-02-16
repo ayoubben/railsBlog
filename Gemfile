@@ -34,6 +34,11 @@ gem 'cancancan'
 gem 'rails_12factor', group: :production
 gem 'rmagick'
 gem 'fileutils'
+# Elasticsearch
+gem 'chewy'
+gem 'elasticsearch'
+gem 'elasticsearch-extensions'
+gem 'active_data', github: 'pyromaniac/active_data'
 group :development do
   gem 'better_errors'
   gem 'hub', require: nil

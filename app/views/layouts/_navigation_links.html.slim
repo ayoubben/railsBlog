@@ -12,7 +12,13 @@ li class= "#{'open' if !@item.nil? && @item == 'BETRE' }"
     = link_to 'Ajouter article', new_post_path, class: "animate"
 == render 'layouts/nav_links_for_auth'
 
-
-
-
-
+li.hidden-xs
+  a.animate href="#toggle-search"
+    span.glyphicon.glyphicon-search
+.bootsnipp-search.animate
+  = form_for @search, as: :search, url: visitors_path, method: :get do |f|
+    .input-group
+      = f.text_field :query, class: 'form-control input-search', placeholder: 'Quoi? Mot clé ...'
+      span.input-group-btn
+        button.btn.btn-danger type="reset"
+          span.glyphicon.glyphicon-remove
