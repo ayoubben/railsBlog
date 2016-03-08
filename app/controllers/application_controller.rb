@@ -6,7 +6,6 @@ class ApplicationController < ActionController::Base
   before_filter :message
 
   def message
-    @search =  PostSearch.new
     @message = Message.new
   end
 

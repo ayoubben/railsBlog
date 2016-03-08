@@ -109,14 +109,14 @@
   display: none;
 }
 .navbar-bootsnipp .bootsnipp-search .form-control {
-  background-color: #fff;
+  background-color: rgb(235, 235, 235);
   border-radius: 0px;
   border-width: 0px;
   font-size: 24px;
   padding: 30px 0px;
 }
 .navbar-bootsnipp .bootsnipp-search .form-control {
-  background-color: #fff;
+  background-color: rgb(235, 235, 235);
   border-radius: 0px;
   border-width: 0px;
   font-size: 24px;
@@ -138,7 +138,7 @@
   padding: 14px 16px 14px 15px;
 }
 .navbar-bootsnipp .bootsnipp-search .input-group-btn > .btn-default {
-  background-color: #fff;
+  background-color: rgb(245, 245, 245);
 }
 .nav-padding {
   padding-top: 61px;
@@ -171,11 +171,11 @@
 
 
   .navbar-bootsnipp .bootsnipp-search {
-    background-color: #fff;
-    border-top: 1px solid #5fb0e4;
+    background-color: rgb(235, 235, 235);
     display: block;
     position: absolute;
     top: 100%;
+    width: 100%;
     -webkit-transform: rotateX(-90deg);
     -moz-transform: rotateX(-90deg);
     -o-transform: rotateX(-90deg);

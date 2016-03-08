@@ -12,7 +12,7 @@ class MessagesController < ApplicationController
       if @message.save
         format.html { redirect_to :root, notice: 'Message was successfully created.' }
       else
-        format.html { render :root, notice: 'Something goes wrong.' }
+        format.html { render :root , notice: 'Something goes wrong.'}
       end
     end
   end
@@ -30,8 +30,9 @@ class MessagesController < ApplicationController
   def set_message
     @message = Message.find(params[:id])
   end
-
+  # Never trust parameters from the scary internet, only allow the white list through.
   def message_params
     params.require(:message).permit(:name, :text, :email)
   end
+
 end

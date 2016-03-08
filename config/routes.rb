@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   devise_for :users
   get 'tags/:tag', to: 'visitors#index', as: :tag
 
-  resources :visitors
   resources :posts
   resources :comments
   resources :categories

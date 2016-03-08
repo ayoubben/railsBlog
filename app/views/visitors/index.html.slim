@@ -1,39 +1,38 @@
-- if @posts.any?
-  - @posts.each do |post|
-    h2.title-post
-      = link_to post.title, post_path(post.id)
-    .pull-right
-      span.glyphicon.glyphicon-time
-      = time_ago_in_words(post.created_at)
-    .col-md-12
-      .littlespage
-    .wrapper
-      = image_tag post.image.url(:normal), class: 'image-tag'
-      - unless post.category.code == Category.find_by(code: 'NONE')
-        .ribbon-wrapper-green
-          .ribbon-green
-            = post.category.title
-    .white-background
-      .padding-post
-        = raw(post.first_text_lines(3))
-        hr
-        .col-md-2
-          p.lead Tags :
-        .col-md-8
-          span.tags = raw post.tag_list.map{ |t| link_to t, tag_path(t), class: "white-color btn btn-#{Post::COLORS.values[rand(Post::COLORS.size)]} btn-sm btn-tag"}.join(' ')
-        .col-md-2
-          = link_to post_path(post.id), class: "btn btn-primary btn-sm pull-right" do
-            | Lire la suite
-            span.glyphicon.glyphicon-chevron-right
+- @posts.each do |post|
+  h2.title-post
+    = link_to post.title, post_path(post.id)
+  .pull-right
+    span.glyphicon.glyphicon-time
+    = time_ago_in_words(post.created_at)
+  .col-md-12
+    .littlespage
+  .wrapper
+    = image_tag post.image.url(:normal), class: 'image-tag'
+    - unless post.category.code == Category.find_by(code: 'NONE')
+      .ribbon-wrapper-green
+        .ribbon-green
+          = post.category.title
+  .white-background
+    .padding-post
+      = raw(post.first_text_lines(3))
+      hr
+      .col-md-2
+        p.lead Tags :
+      .col-md-8
+        span.tags = raw post.tag_list.map{ |t| link_to t, tag_path(t), class: "white-color btn btn-#{Post::COLORS.values[rand(Post::COLORS.size)]} btn-sm btn-tag"}.join(' ')
+      .col-md-2
+        = link_to post_path(post.id), class: "btn btn-primary btn-sm pull-right" do
+          | Lire la suite
+          span.glyphicon.glyphicon-chevron-right
+      br
+      hr
+      .link_to_comment
+        = link_to "#{post_path(post.id)}#comments", class: "pull-left" do
+          span.glyphicon.glyphicon-comment
+          =" #{post.comments.count}  commentaires"
+        = link_to "#{post_path(post.id)}#form", class: "pull-right" do
+          | Laisser un commentaire...
         br
-        hr
-        .link_to_comment
-          = link_to "#{post_path(post.id)}#comments", class: "pull-left" do
-            span.glyphicon.glyphicon-comment
-            =" #{post.comments.count}  commentaires"
-          = link_to "#{post_path(post.id)}#form", class: "pull-right" do
-            | Laisser un commentaire...
-          br
-  #pagination.pager
-    = will_paginate @posts, class:'will_paginate', renderer: BootstrapPagination::Rails
-  br
+#pagination.pager
+  = will_paginate @posts, class:'will_paginate', renderer: BootstrapPagination::Rails
+br
